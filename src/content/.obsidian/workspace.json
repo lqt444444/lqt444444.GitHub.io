@@ -27,12 +27,12 @@
 						"state": {
 							"type": "markdown",
 							"state": {
-								"file": "posts/markdown-extended.md",
+								"file": "posts/guide/index.md",
 								"mode": "source",
 								"source": false
 							},
 							"icon": "lucide-file",
-							"title": "markdown-extended"
+							"title": "index"
 						}
 					}
 				],
@@ -109,7 +109,7 @@
 						"state": {
 							"type": "backlink",
 							"state": {
-								"file": "posts/markdown-extended.md",
+								"file": "posts/guide/index.md",
 								"collapseAll": false,
 								"extraContext": false,
 								"sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-coming-in",
-							"title": "markdown-extended 的反向链接列表"
+							"title": "index 的反向链接列表"
 						}
 					},
 					{
@@ -128,12 +128,12 @@
 						"state": {
 							"type": "outgoing-link",
 							"state": {
-								"file": "posts/markdown-extended.md",
+								"file": "posts/guide/index.md",
 								"linksCollapsed": false,
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-going-out",
-							"title": "markdown-extended 的出链列表"
+							"title": "index 的出链列表"
 						}
 					},
 					{
@@ -157,13 +157,13 @@
 						"state": {
 							"type": "outline",
 							"state": {
-								"file": "posts/markdown-extended.md",
+								"file": "posts/guide/index.md",
 								"followCursor": false,
 								"showSearch": false,
 								"searchQuery": ""
 							},
 							"icon": "lucide-list",
-							"title": "markdown-extended 的大纲"
+							"title": "index 的大纲"
 						}
 					}
 				]
@@ -185,13 +185,13 @@
 	},
 	"active": "35fabc86358277dd",
 	"lastOpenFiles": [
+		"posts/博客使用指南.md",
+		"posts/cover.jpeg",
+		"posts/markdown-extended.md",
 		"posts/markdown.md",
 		"posts/expressive-code.md",
 		"posts/draft.md",
-		"posts/博客使用指南.md",
-		"posts/cover.jpeg",
 		"posts/guide/index.md",
-		"posts/video.md",
-		"posts/markdown-extended.md"
+		"posts/video.md"
 	]
 }
