@@ -27,12 +27,12 @@
 						"state": {
 							"type": "markdown",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"mode": "source",
 								"source": false
 							},
 							"icon": "lucide-file",
-							"title": "about"
+							"title": "博客搭建"
 						}
 					}
 				],
@@ -109,7 +109,7 @@
 						"state": {
 							"type": "backlink",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"collapseAll": false,
 								"extraContext": false,
 								"sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-coming-in",
-							"title": "about 的反向链接列表"
+							"title": "博客搭建 的反向链接列表"
 						}
 					},
 					{
@@ -128,12 +128,12 @@
 						"state": {
 							"type": "outgoing-link",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"linksCollapsed": false,
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-going-out",
-							"title": "about 的出链列表"
+							"title": "博客搭建 的出链列表"
 						}
 					},
 					{
@@ -157,13 +157,13 @@
 						"state": {
 							"type": "outline",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"followCursor": false,
 								"showSearch": false,
 								"searchQuery": ""
 							},
 							"icon": "lucide-list",
-							"title": "about 的大纲"
+							"title": "博客搭建 的大纲"
 						}
 					}
 				]
@@ -185,8 +185,11 @@
 	},
 	"active": "35fabc86358277dd",
 	"lastOpenFiles": [
-		"posts/guide/index.md",
+		"2025-07-09.md",
+		"posts/博客搭建.md",
 		"posts/博客使用指南.md",
+		"spec/about.md",
+		"posts/guide/index.md",
 		"posts/cover.jpeg",
 		"posts/markdown-extended.md",
 		"posts/markdown.md",
