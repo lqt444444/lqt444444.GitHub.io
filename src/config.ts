@@ -58,7 +58,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.About, // 指向关于页面的链接
 		{
 			name: "GitHub", // 链接名称
-			url: "https://github.com/saicaca/fuwari", // 目标 URL 地址
+			url: "https://github.com/lqt444444/lqt444444.GitHub.io", // 目标 URL 地址
 			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
 		},
 	],
@@ -76,17 +76,19 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:twitter", // 图标代码, 可在 https://icones.js.org/ 网站查找
 			// 注意: 如果你使用的图标集未被项目默认包含, 你需要手动安装它
 			// 例如: `pnpm add @iconify-json/<图标集名称>`
-			url: "https://twitter.com",
+			url: "https://x.com/SakuraLiQiuting?s=09",
 		},
 		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
+			name: "telegram", // 链接名称
+			icon: "tabler:brand-telegram", // 图标代码, 可在 https://icones.js.org/ 网站查找
+			// 注意: 如果你使用的图标集未被项目默认包含, 你需要手动安装它
+			// 例如: `pnpm add @iconify-json/<图标集名称>`
+			url: "https://t.me/LiQiuTing",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/lqt444444/lqt444444.GitHub.io",
 		},
 	],
 };
