@@ -8,35 +8,20 @@
 				"type": "tabs",
 				"children": [
 					{
-						"id": "23087e7a4d5cb144",
-						"type": "leaf",
-						"state": {
-							"type": "markdown",
-							"state": {
-								"file": "posts/video.md",
-								"mode": "source",
-								"source": false
-							},
-							"icon": "lucide-file",
-							"title": "video"
-						}
-					},
-					{
 						"id": "35fabc86358277dd",
 						"type": "leaf",
 						"state": {
 							"type": "markdown",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"mode": "source",
 								"source": false
 							},
 							"icon": "lucide-file",
-							"title": "about"
+							"title": "博客搭建"
 						}
 					}
-				],
-				"currentTab": 1
+				]
 			}
 		],
 		"direction": "vertical"
@@ -109,7 +94,7 @@
 						"state": {
 							"type": "backlink",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/博客搭建.md",
 								"collapseAll": false,
 								"extraContext": false,
 								"sortOrder": "alphabetical",
@@ -119,7 +104,7 @@
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-coming-in",
-							"title": "about 的反向链接列表"
+							"title": "博客搭建 的反向链接列表"
 						}
 					},
 					{
@@ -128,12 +113,12 @@
 						"state": {
 							"type": "outgoing-link",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/静态部署网站.md",
 								"linksCollapsed": false,
 								"unlinkedCollapsed": true
 							},
 							"icon": "links-going-out",
-							"title": "about 的出链列表"
+							"title": "静态部署网站 的出链列表"
 						}
 					},
 					{
@@ -157,21 +142,20 @@
 						"state": {
 							"type": "outline",
 							"state": {
-								"file": "spec/about.md",
+								"file": "posts/静态部署网站.md",
 								"followCursor": false,
 								"showSearch": false,
 								"searchQuery": ""
 							},
 							"icon": "lucide-list",
-							"title": "about 的大纲"
+							"title": "静态部署网站 的大纲"
 						}
 					}
 				]
 			}
 		],
 		"direction": "horizontal",
-		"width": 300,
-		"collapsed": true
+		"width": 300
 	},
 	"left-ribbon": {
 		"hiddenItems": {
@@ -185,16 +169,19 @@
 	},
 	"active": "35fabc86358277dd",
 	"lastOpenFiles": [
+		"posts/博客使用指南.md",
+		"posts/静态部署网站.md",
+		"posts/guide/index.md",
+		"posts/博客搭建.md",
+		"posts/cover.jpeg",
+		"未命名 1.md",
+		"未命名.md",
 		"posts/video.md",
+		"2025-07-09.md",
+		"spec/about.md",
 		"posts/markdown-extended.md",
 		"posts/markdown.md",
 		"posts/expressive-code.md",
-		"posts/guide/index.md",
-		"posts/博客使用指南.md",
-		"posts/博客搭建.md",
-		"2025-07-09.md",
-		"spec/about.md",
-		"posts/cover.jpeg",
 		"posts/draft.md"
 	]
 }
