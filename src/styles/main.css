@@ -1,5 +1,18 @@
 @tailwind components;
 
+/* 注册你的自定义字体并告诉浏览器它在哪里 */
+@font-face {
+  font-family: 'DistantGalaxy';
+  src: url('/fonts/HYWenHei-75W.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'DistantGalaxy', 'sans-serif';
+}
+
 @layer components {
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
