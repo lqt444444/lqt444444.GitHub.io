@@ -1,3 +1,14 @@
+/* 
+ * FIX: Added a @layer directive to define the custom '.btn-regular-dark' component class.
+ * You can adjust the styles inside to match your theme.
+ */
+@layer components {
+    .btn-regular-dark {
+        @apply bg-gray-800 text-gray-200 hover:bg-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-700;
+    }
+}
+
+
 .custom-md {
     h1 {
         @apply text-3xl;
@@ -20,9 +31,6 @@
     }
 
     a:not(.no-styling) {
-        /* 
-         * FIX: Removed the non-existent 'link' class from this @apply directive.
-         */
         @apply relative bg-none font-medium text-[var(--primary)]
         underline decoration-[var(--link-underline)] decoration-1 decoration-dashed underline-offset-4;
         box-decoration-break: clone;
@@ -63,6 +71,7 @@
 
     .copy-btn {
         all: initial;
+        /* btn-regular-dark is now defined in the @layer above, so this will work */
         @apply btn-regular-dark opacity-0 shadow-lg shadow-black/50 absolute active:scale-90 h-8 w-8 top-3 right-3 text-sm rounded-lg transition-all ease-in-out z-20 cursor-pointer;
     }
     .frame:hover .copy-btn {
@@ -120,4 +129,4 @@
         margin: 1em 0;
     }
     
-}
+}```
