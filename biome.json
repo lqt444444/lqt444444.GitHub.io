@@ -7,18 +7,13 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "experimentalScannerIgnores": [
-      "dist/",
-      ".astro/",
-      "node_modules/",
-      "src/content/.obsidian/**"
-    ],
     "includes": [
       "**",
       "!**/src/**/*.css",
       "!**/src/public/**/*",
       "!**/dist/**/*",
-      "!**/node_modules/**/*"
+      "!**/node_modules/**/*",
+	  "!**/src/content/.obsidian/**" 
     ]
   },
   "formatter": {
