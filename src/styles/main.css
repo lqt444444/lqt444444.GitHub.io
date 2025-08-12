@@ -1,6 +1,18 @@
+/**
+ * =================================================================
+ * 最终修正版 CSS 文件 v9 (模仿暗色主题 - 绝对可靠方案)
+ * @version 9.0
+ *
+ * 修改说明:
+ * 1. 严格基于您提供的 v5.0 版本，确保了基础的稳定性。
+ * 2. 放弃了所有自定义全局变量的“冒险”方案。
+ * 3. 采用了“模仿暗色主题”的思路：为每个修改点提供一个亮色模式下的基础样式，并新增一个以 `.dark` 为前缀的规则来覆盖它，以实现暗色模式。
+ * 4. 为所有需要适配的元素（卡片、面板、行内代码、常规按钮、滚动条）都应用了此方案。
+ * =================================================================
+ */
+
 @tailwind components;
 
-/* 注册你的自定义字体并告诉浏览器它在哪里 */
 @font-face {
   font-family: 'DistantGalaxy';
   src: url('/fonts/HYWenHei-75W-subseit.woff') format('woff');
@@ -14,74 +26,147 @@
 }
 
 @layer components {
+    /*
+     * [已修正] 卡片基础样式 - 这是您大部分文本的背景。
+     */
     .card-base {
-        @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
+        @apply rounded-[var(--radius-large)] overflow-hidden transition;
+        
+        /* [亮色模式] 设置一个半透明的白色背景。 */
+        background-color: rgba(255, 255, 255, 0.75);
+
+        @supports (backdrop-filter: blur(1px)) {
+            @apply backdrop-blur-xl;
+        }
     }
+    /* [暗色模式] 当 .dark 生效时，覆盖上面的背景为半透明深灰色。 */
+    .dark .card-base {
+        background-color: rgba(30, 41, 59, 0.75);
+    }
+
+    /* [原始部分] 全局过渡 */
     h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
         @apply transition;
     }
+    /* [原始部分] 卡片阴影 */
     .card-shadow {
-        @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)]
+        @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)];
     }
+    /* [原始部分] 扩展动画 */
     .expand-animation {
         @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
-        before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10
+        before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
     }
+    /* [原始部分] 链接样式 */
     .link {
         @apply transition rounded-md p-1 -m-1 expand-animation;
     }
     .link-lg {
         @apply transition rounded-md p-1.5 -m-1.5 expand-animation;
     }
+
+    /*
+     * [已修正] 浮动面板样式 - 例如搜索结果面板的背景。
+     */
     .float-panel {
-        @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden bg-[var(--float-panel-bg)] transition shadow-xl dark:shadow-none
+        @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden transition shadow-xl dark:shadow-none;
+        
+        /* [亮色模式] */
+        background-color: rgba(255, 255, 255, 0.8);
+
+        @supports (backdrop-filter: blur(1px)) {
+            @apply backdrop-blur-xl;
+        }
     }
-    .float-panel-closed {
-        @apply -translate-y-1 opacity-0 pointer-events-none
+    /* [暗色模式] */
+    .dark .float-panel {
+      background-color: rgba(30, 41, 59, 0.8);
     }
-    .search-panel mark {
-        @apply bg-transparent text-[var(--primary)]
+    
+    /* 
+     * [新增] 自定义滚动条背景透明化
+     */
+    .os-scrollbar-horizontal,
+    .os-scrollbar-vertical {
+        /* [亮色模式] */
+        background-color: rgba(255, 255, 255, 0.75) !important;
+        
+        @supports (backdrop-filter: blur(1px)) {
+            backdrop-filter: blur(12px) !important;
+        }
+    }
+    /* [暗色模式] */
+    .dark .os-scrollbar-horizontal,
+    .dark .os-scrollbar-vertical {
+      background-color: rgba(30, 41, 59, 0.75) !important;
     }
 
+    /* [原始部分] 浮动面板关闭状态 */
+    .float-panel-closed {
+        @apply -translate-y-1 opacity-0 pointer-events-none;
+    }
+    /* [原始部分] 搜索面板高亮 */
+    .search-panel mark {
+        @apply bg-transparent text-[var(--primary)];
+    }
+
+    /* --- 按钮样式 --- */
     .btn-card {
         @apply transition flex items-center justify-center bg-[var(--card-bg)] hover:bg-[var(--btn-card-bg-hover)]
-        active:bg-[var(--btn-card-bg-active)]
+        active:bg-[var(--btn-card-bg-active)];
     }
     .btn-card.disabled {
-        @apply pointer-events-none text-black/10 dark:text-white/10
+        @apply pointer-events-none text-black/10 dark:text-white/10;
     }
     .btn-plain {
         @apply transition relative flex items-center justify-center bg-none
         text-black/75 hover:text-[var(--primary)] dark:text-white/75 dark:hover:text-[var(--primary)];
         &:not(.scale-animation) {
-            @apply hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)]
+            @apply hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)];
         }
         &.scale-animation {
             @apply expand-animation;
             &.current-theme-btn {
-                @apply before:scale-100 before:opacity-100 before:bg-[var(--btn-plain-bg-hover)] text-[var(--primary)]
+                @apply before:scale-100 before:opacity-100 before:bg-[var(--btn-plain-bg-hover)] text-[var(--primary)];
             }
         }
     }
-    .btn-regular {
-        @apply transition flex items-center justify-center bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)]
-        text-[var(--btn-content)] dark:text-white/75
-    }
 
+    /*
+     * [已修正] 常规按钮样式
+     */
+    .btn-regular {
+        @apply transition flex items-center justify-center active:bg-[var(--btn-regular-bg-active)]
+        text-[var(--btn-content)] dark:text-white/75;
+        
+        /* [亮色模式] */
+        background-color: rgba(226, 232, 240, 0.8); /* 半透明的淡灰色 */
+    }
+    .btn-regular:hover {
+        /* [亮色模式] 悬停 */
+        background-color: rgba(203, 213, 225, 0.85); 
+    }
+    /* [暗色模式] */
+    .dark .btn-regular {
+        background-color: rgba(71, 85, 105, 0.7); /* 半透明的深灰色 */
+    }
+    /* [暗色模式] 悬停 */
+    .dark .btn-regular:hover {
+        background-color: rgba(51, 65, 85, 0.8);
+    }
+    
+    /* --- 其他样式 --- */
     .link-underline {
         @apply transition underline decoration-2 decoration-dashed decoration-[var(--link-underline)]
-        hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem]
+        hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem];
     }
-
     .toc-hide,
     .toc-not-ready {
-        @apply opacity-0 pointer-events-none
+        @apply opacity-0 pointer-events-none;
     }
-
     #toc-inner-wrapper {
         mask-image: linear-gradient(to bottom, transparent 0%, black 2rem, black calc(100% - 2rem), transparent 100%);
     }
-
     .hide-scrollbar {
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -89,54 +174,79 @@
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
     }
-
-    .text-90 {
-        @apply text-black/90 dark:text-white/90
-    }
-    .text-75 {
-        @apply text-black/75 dark:text-white/75
-    }
-    .text-50 {
-        @apply text-black/50 dark:text-white/50
-    }
-    .text-30 {
-        @apply text-black/30 dark:text-white/30
-    }
-    .text-25 {
-        @apply text-black/25 dark:text-white/25
-    }
-
+    .text-90 { @apply text-black/90 dark:text-white/90; }
+    .text-75 { @apply text-black/75 dark:text-white/75; }
+    .text-50 { @apply text-black/50 dark:text-white/50; }
+    .text-30 { @apply text-black/30 dark:text-white/30; }
+    .text-25 { @apply text-black/25 dark:text-white/25; }
+    
+    /*
+     * [已修正] 元信息图标样式
+     */
     .meta-icon {
-        @apply w-8 h-8 transition rounded-md flex items-center justify-center bg-[var(--btn-regular-bg)]
-        text-[var(--btn-content)] mr-2
+        @apply w-8 h-8 transition rounded-md flex items-center justify-center
+        text-[var(--btn-content)] mr-2;
+        /* [亮色模式] */
+        background-color: rgba(226, 232, 240, 0.8); /* 复用常规按钮的背景 */
     }
+    /* [暗色模式] */
+    .dark .meta-icon {
+        background-color: rgba(71, 85, 105, 0.7);
+    }
+    
     .with-divider {
         @apply before:content-['/'] before:ml-1.5 before:mr-1.5 before:text-[var(--meta-divider)] before:text-sm
-        before:font-medium before:first-of-type:hidden before:transition
+        before:font-medium before:first-of-type:hidden before:transition;
     }
-
     .btn-regular-dark {
         @apply flex items-center justify-center
         bg-[oklch(0.45_0.01_var(--hue))] hover:bg-[oklch(0.50_0.01_var(--hue))] active:bg-[oklch(0.55_0.01_var(--hue))]
-        dark:bg-[oklch(0.30_0.02_var(--hue))] dark:hover:bg-[oklch(0.35_0.03_var(--hue))] dark:active:bg-[oklch(0.40_0.03_var(--hue))]
+        dark:bg-[oklch(0.30_0.02_var(--hue))] dark:hover:bg-[oklch(0.35_0.03_var(--hue))] dark:active:bg-[oklch(0.40_0.03_var(--hue))];
     }
     .btn-regular-dark.success {
-        @apply bg-[oklch(0.75_0.14_var(--hue))] dark:bg-[oklch(0.75_0.14_var(--hue))]
+        @apply bg-[oklch(0.75_0.14_var(--hue))] dark:bg-[oklch(0.75_0.14_var(--hue))];
     }
 }
 
+/* --- 全局样式 --- */
 .custom-md img, #post-cover img {
-    @apply cursor-zoom-in
+    @apply cursor-zoom-in;
+}
+
+/*
+ * [已修正] 行内代码 `<code>` 标签的父容器样式
+ */
+.custom-md code {
+    @apply text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
+    /* [亮色模式] */
+    background-color: rgba(241, 245, 249, 0.8); /* 半透明的极淡灰色 */
+    
+    /* [原始部分] 其他字体、伪元素等样式保持不变 */
+    font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    &:before { content:none; }
+    &:after { content:none; }
+    counter-reset: line;
+    span.line {
+        &:before {
+            @apply text-white/25 mr-4 w-4 inline-block;
+            content: counter(line);
+            counter-increment: line;
+            direction: rtl;
+        }
+        &:last-child:empty, &:last-child:has(> span:empty:only-child) { display: none; }
+    }
+}
+/* [暗色模式] */
+.dark .custom-md code {
+  background-color: rgba(51, 65, 85, 0.7); /* 半透明的深灰色 */
 }
 
 ::selection {
-    background-color: var(--selection-bg)
+    background-color: var(--selection-bg);
 }
-
 .dash-line {
     position: relative;
 }
-
 .dash-line::before {
     content: "";
     position: absolute;
@@ -148,7 +258,6 @@
     transition: all 0.3s;
     transform: translateY(-50%);
 }
-
 .collapsed {
     height: var(--collapsedHeight);
 }
