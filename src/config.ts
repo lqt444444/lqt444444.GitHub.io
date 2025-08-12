@@ -22,8 +22,8 @@ export const siteConfig: SiteConfig = {
 
 	// --- 首页横幅图片配置 ---
 	banner: {
-		enable: false, // 是否启用首页顶部的大横幅图片
-		src: "assets/images/demo-banner.png", // 图片路径。相对于 /src 目录。如果以'/'开头, 则相对于 /public 目录
+		enable: true, // 是否启用首页顶部的大横幅图片
+		src: "https://www.loliapi.com/acg/", // 图片路径。相对于 /src 目录。如果以'/'开头, 则相对于 /public 目录
 		position: "center", // 图片显示位置, 相当于 CSS 的 object-position。可选 'top', 'center', 'bottom'。默认为 'center'
 		credit: {
 			enable: false, // 是否在图片下方显示版权信息
@@ -66,9 +66,9 @@ export const navBarConfig: NavBarConfig = {
 
 // --- 左侧个人简介配置 ---
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // 你的头像图片路径。规则同上方的 banner.src
+	avatar: "https://www.loliapi.com/acg/pp/", // 你的头像图片路径。规则同上方的 banner.src
 	name: "LiQiuTing", // 你的名字或昵称
-	bio: "什么都没有", // 一段关于你的简短介绍
+	bio: "我的邮箱Li-QiuTing@proton.me", // 一段关于你的简短介绍
 	links: [
 		// 你的社交媒体链接
 		{
