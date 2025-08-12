@@ -66,7 +66,7 @@ export const navBarConfig: NavBarConfig = {
 
 // --- 左侧个人简介配置 ---
 export const profileConfig: ProfileConfig = {
-	avatar: "https://www.loliapi.com/acg/pp/", // 你的头像图片路径。规则同上方的 banner.src
+	avatar: "https://img.loliapi.com/i/pp/img99.webp", // 你的头像图片路径。规则同上方的 banner.src
 	name: "LiQiuTing", // 你的名字或昵称
 	bio: "我的邮箱Li-QiuTing@proton.me", // 一段关于你的简短介绍
 	links: [
