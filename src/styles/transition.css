@@ -1,3 +1,16 @@
+/**
+ * =================================================================
+ * transition.css (MODIFIZIERTE VERSION)
+ *
+ * Änderungshinweis:
+ * 1. [KORREKTUR] Den Hauptcontainern (#swup-container, #content-wrapper)
+ *    wurde ein transparenter Hintergrund hinzugefügt. Dies ist
+ *    entscheidend, damit das statische Hintergrundbild (#post-cover)
+ *    sichtbar wird und nicht von einem undurchsichtigen Inhalts-Wrapper
+ *    verdeckt wird.
+ * =================================================================
+ */
+
 /* Page transition animations with Swup */
 html.is-changing .transition-swup-fade {
     @apply transition-all duration-200
@@ -30,12 +43,26 @@ html.is-animating .transition-swup-fade {
 #sidebar {
     animation-delay: 100ms
 }
+
+/*
+ * [KORREKTUR] Der Swup-Container muss transparent sein, damit
+ * das Hintergrundbild (#post-cover) sichtbar ist. Das !important
+ * stellt sicher, dass alle anderen Hintergrund-Stile überschrieben werden.
+ */
 #swup-container {
     outline: none;
+    background: transparent !important;
 }
+
+/*
+ * [KORREKTUR] Aus Sicherheitsgründen wird auch der #content-wrapper
+ * transparent gemacht, falls er als Hauptcontainer verwendet wird.
+ */
 #content-wrapper {
     animation-delay: var(--content-delay);
+    background: transparent !important;
 }
+
 .footer {
     animation-delay: 250ms;
 }
@@ -50,4 +77,3 @@ html.is-animating .transition-swup-fade {
 #post-container :nth-child(4) { animation-delay: calc(var(--content-delay) + 175ms) }
 #post-container :nth-child(5) { animation-delay: calc(var(--content-delay) + 250ms) }
 #post-container :nth-child(6) { animation-delay: calc(var(--content-delay) + 325ms) }
-

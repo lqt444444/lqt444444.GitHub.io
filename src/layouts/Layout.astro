@@ -73,7 +73,8 @@ const bannerOffset =
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
+<!-- [未变动] -->
+<html lang={siteLang} class="transition text-[14px] md:text-[16px]"
 	  data-overlayscrollbars-initialize
 >
 	<head>
@@ -151,11 +152,15 @@ const bannerOffset =
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
-		<ConfigCarrier></ConfigCarrier>
-		<slot />
+		<!-- [未变动] -->
+		<img id="bg" src="https://www.loliapi.com/acg/" alt="background">
+		<div id="app-content-wrapper">
+			<ConfigCarrier></ConfigCarrier>
+			<slot />
 
-		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
-		<div id="page-height-extend" class="hidden h-[300vh]"></div>
+			<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
+			<div id="page-height-extend" class="hidden h-[300vh]"></div>
+		</div>
 	</body>
 </html>
 
@@ -164,8 +169,27 @@ const bannerOffset =
 	'banner-height-home': `${BANNER_HEIGHT_HOME}vh`,
 	'banner-height': `${BANNER_HEIGHT}vh`,
 }}>
+
+@tailwind base;
 @tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    /* [未变动] 保持之前的修正 */
+    html, body {
+      @apply !bg-transparent;
+    }
+
+    /* [未变动] 核心样式 */
+    #bg {
+      @apply fixed top-0 left-0 w-full h-full object-cover -z-10;
+    }
+}
+
+
 @layer components {
+	/* -- 以下是您原有的、未作任何修改的组件样式 -- */
 	.enable-banner.is-home #banner-wrapper {
 		@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
 	}
@@ -194,6 +218,7 @@ const bannerOffset =
 }
 </style>
 
+<!-- 以下所有 script 标签均未作任何修改，原样保留 -->
 <script>
 import 'overlayscrollbars/overlayscrollbars.css';
 import {

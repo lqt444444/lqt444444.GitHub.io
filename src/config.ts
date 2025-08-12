@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
 
 	// --- 首页横幅图片配置 ---
 	banner: {
-		enable: true, // 是否启用首页顶部的大横幅图片
+		enable: false, // 是否启用首页顶部的大横幅图片
 		src: "https://www.loliapi.com/acg/", // 图片路径。相对于 /src 目录。如果以'/'开头, 则相对于 /public 目录
 		position: "center", // 图片显示位置, 相当于 CSS 的 object-position。可选 'top', 'center', 'bottom'。默认为 'center'
 		credit: {

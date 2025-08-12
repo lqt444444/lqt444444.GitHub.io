@@ -1,13 +1,12 @@
 /**
  * =================================================================
- * 最终修正版 CSS 文件 v9 (模仿暗色主题 - 绝对可靠方案)
- * @version 9.0
+ * 最终版 CSS 文件 v10 (整合全屏背景 + 布局调整)
+ * @version 10.0
  *
  * 修改说明:
- * 1. 严格基于您提供的 v5.0 版本，确保了基础的稳定性。
- * 2. 放弃了所有自定义全局变量的“冒险”方案。
- * 3. 采用了“模仿暗色主题”的思路：为每个修改点提供一个亮色模式下的基础样式，并新增一个以 `.dark` 为前缀的规则来覆盖它，以实现暗色模式。
- * 4. 为所有需要适配的元素（卡片、面板、行内代码、常规按钮、滚动条）都应用了此方案。
+ * 1. 包含了所有 v9 版本中您满意的、能自适应主题的半透明样式。
+ * 2. [已整合] 在文件末尾添加了经过优化的、用于实现静止全屏背景的CSS规则。
+ * 3. [已修正] 移除了之前错误的布局代码，并新增了针对主内容区`<main>`和文章头部`.prose`的布局调整，以解决内容遮挡问题。
  * =================================================================
  */
 
@@ -26,38 +25,29 @@
 }
 
 @layer components {
-    /*
-     * [已修正] 卡片基础样式 - 这是您大部分文本的背景。
-     */
+    /* [已适配] 卡片基础样式 */
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden transition;
-        
-        /* [亮色模式] 设置一个半透明的白色背景。 */
         background-color: rgba(255, 255, 255, 0.75);
-
         @supports (backdrop-filter: blur(1px)) {
             @apply backdrop-blur-xl;
         }
     }
-    /* [暗色模式] 当 .dark 生效时，覆盖上面的背景为半透明深灰色。 */
     .dark .card-base {
         background-color: rgba(30, 41, 59, 0.75);
     }
 
-    /* [原始部分] 全局过渡 */
+    /* [原始部分] */
     h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
         @apply transition;
     }
-    /* [原始部分] 卡片阴影 */
     .card-shadow {
         @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)];
     }
-    /* [原始部分] 扩展动画 */
     .expand-animation {
         @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
         before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
     }
-    /* [原始部分] 链接样式 */
     .link {
         @apply transition rounded-md p-1 -m-1 expand-animation;
     }
@@ -65,47 +55,35 @@
         @apply transition rounded-md p-1.5 -m-1.5 expand-animation;
     }
 
-    /*
-     * [已修正] 浮动面板样式 - 例如搜索结果面板的背景。
-     */
+    /* [已适配] 浮动面板样式 */
     .float-panel {
         @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden transition shadow-xl dark:shadow-none;
-        
-        /* [亮色模式] */
         background-color: rgba(255, 255, 255, 0.8);
-
         @supports (backdrop-filter: blur(1px)) {
             @apply backdrop-blur-xl;
         }
     }
-    /* [暗色模式] */
     .dark .float-panel {
       background-color: rgba(30, 41, 59, 0.8);
     }
     
-    /* 
-     * [新增] 自定义滚动条背景透明化
-     */
+    /* [已适配] 自定义滚动条背景 */
     .os-scrollbar-horizontal,
     .os-scrollbar-vertical {
-        /* [亮色模式] */
         background-color: rgba(255, 255, 255, 0.75) !important;
-        
         @supports (backdrop-filter: blur(1px)) {
             backdrop-filter: blur(12px) !important;
         }
     }
-    /* [暗色模式] */
     .dark .os-scrollbar-horizontal,
     .dark .os-scrollbar-vertical {
       background-color: rgba(30, 41, 59, 0.75) !important;
     }
 
-    /* [原始部分] 浮动面板关闭状态 */
+    /* [原始部分] */
     .float-panel-closed {
         @apply -translate-y-1 opacity-0 pointer-events-none;
     }
-    /* [原始部分] 搜索面板高亮 */
     .search-panel mark {
         @apply bg-transparent text-[var(--primary)];
     }
@@ -132,30 +110,23 @@
         }
     }
 
-    /*
-     * [已修正] 常规按钮样式
-     */
+    /* [已适配] 常规按钮样式 */
     .btn-regular {
         @apply transition flex items-center justify-center active:bg-[var(--btn-regular-bg-active)]
         text-[var(--btn-content)] dark:text-white/75;
-        
-        /* [亮色模式] */
-        background-color: rgba(226, 232, 240, 0.8); /* 半透明的淡灰色 */
+        background-color: rgba(226, 232, 240, 0.8);
     }
     .btn-regular:hover {
-        /* [亮色模式] 悬停 */
         background-color: rgba(203, 213, 225, 0.85); 
     }
-    /* [暗色模式] */
     .dark .btn-regular {
-        background-color: rgba(71, 85, 105, 0.7); /* 半透明的深灰色 */
+        background-color: rgba(71, 85, 105, 0.7);
     }
-    /* [暗色模式] 悬停 */
     .dark .btn-regular:hover {
         background-color: rgba(51, 65, 85, 0.8);
     }
     
-    /* --- 其他样式 --- */
+    /* [原始部分] */
     .link-underline {
         @apply transition underline decoration-2 decoration-dashed decoration-[var(--link-underline)]
         hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem];
@@ -180,16 +151,12 @@
     .text-30 { @apply text-black/30 dark:text-white/30; }
     .text-25 { @apply text-black/25 dark:text-white/25; }
     
-    /*
-     * [已修正] 元信息图标样式
-     */
+    /* [已适配] 元信息图标样式 */
     .meta-icon {
         @apply w-8 h-8 transition rounded-md flex items-center justify-center
         text-[var(--btn-content)] mr-2;
-        /* [亮色模式] */
-        background-color: rgba(226, 232, 240, 0.8); /* 复用常规按钮的背景 */
+        background-color: rgba(226, 232, 240, 0.8);
     }
-    /* [暗色模式] */
     .dark .meta-icon {
         background-color: rgba(71, 85, 105, 0.7);
     }
@@ -209,19 +176,14 @@
 }
 
 /* --- 全局样式 --- */
-.custom-md img, #post-cover img {
+.custom-md img {
     @apply cursor-zoom-in;
 }
 
-/*
- * [已修正] 行内代码 `<code>` 标签的父容器样式
- */
+/* [已适配] 行内代码 `<code>` 标签 */
 .custom-md code {
     @apply text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
-    /* [亮色模式] */
-    background-color: rgba(241, 245, 249, 0.8); /* 半透明的极淡灰色 */
-    
-    /* [原始部分] 其他字体、伪元素等样式保持不变 */
+    background-color: rgba(241, 245, 249, 0.8);
     font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     &:before { content:none; }
     &:after { content:none; }
@@ -236,9 +198,8 @@
         &:last-child:empty, &:last-child:has(> span:empty:only-child) { display: none; }
     }
 }
-/* [暗色模式] */
 .dark .custom-md code {
-  background-color: rgba(51, 65, 85, 0.7); /* 半透明的深灰色 */
+  background-color: rgba(51, 65, 85, 0.7);
 }
 
 ::selection {
@@ -260,4 +221,53 @@
 }
 .collapsed {
     height: var(--collapsedHeight);
+}
+
+/**
+ * =================================================================
+ * [新增部分] 全屏封面图及布局调整
+ * =================================================================
+ */
+
+/* 步骤 1: 设置封面图容器全屏并置于底层 */
+#post-cover {
+    /* 使用 'fixed' 定位让背景静止不动，不随页面滚动。*/
+    /* 'w-screen' 和 'h-screen' 使其铺满整个视口。*/
+    /* '-z-10' 将其置于所有其他内容之下，成为真正的背景。*/
+    @apply fixed top-0 left-0 w-screen h-screen -z-10;
+}
+
+/* 步骤 2: 让封面图本身填满其容器 */
+#post-cover img {
+    /* 'w-full' 和 'h-full' 让图片占满 #post-cover 容器。*/
+    /* 'object-cover' 是关键，它能保持图片比例，通过裁剪来填充空间，防止变形。*/
+    /* 'cursor-default' 移除不必要的鼠标指针样式。*/
+    @apply w-full h-full object-cover cursor-default;
+}
+
+/*
+ * 步骤 3: 调整主内容区的布局
+ * 这是为了给顶部的导航栏和全屏背景下的标题区留出空间。
+ */
+main.prose {
+    /* 
+     * 'pt-16' 或 'pt-20' 为文章主体内容（从第一个H2标题或段落开始）添加一个上边距。
+     * 这可以确保文章正文与顶部的标题、元信息之间有呼吸感。
+     * 您可以调整这个值以获得最佳的视觉效果。
+     */
+    @apply pt-16;
+}
+
+/* 
+ * 步骤 4: 调整文章头部的布局
+ * 我们需要为整个页面（从文章大标题开始）添加一个非常大的上边距，
+ * 以便把它从被导航栏遮挡的区域“推”下来。
+ */
+.page-wrapper > header {
+    /* 
+     * 'pt-32' 或 'pt-40' 是一个比较大的上边距。
+     * 这个值需要足够大，以确保文章标题能显示在导航栏下方一个舒适的位置。
+     * 这是您最需要根据自己网站导航栏高度进行微调的值。
+     */
+    @apply pt-32;
 }
