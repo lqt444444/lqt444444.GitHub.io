@@ -97,7 +97,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "spec/about.md",
+                "file": "posts/添加字体.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -112,7 +112,55 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "添加字体"
+            }
+          },
+          {
+            "id": "a4b3b630b675aac0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/加速访问部分网站.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "加速访问部分网站"
+            }
+          },
+          {
+            "id": "4475be84b862e46d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/如何使用CF搭建节点.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "如何使用CF搭建节点"
             }
           },
           {
@@ -130,7 +178,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -203,7 +251,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "spec/about.md",
+                "file": "posts/如何使用CF搭建节点.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -213,7 +261,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "about 的反向链接列表"
+              "title": "如何使用CF搭建节点 的反向链接列表"
             }
           },
           {
@@ -277,12 +325,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "49879201d9867e9e",
+  "active": "4475be84b862e46d",
   "lastOpenFiles": [
+    "posts/加速访问部分网站.md",
+    "posts/如何使用CF搭建节点.md",
+    "posts/添加字体.md",
+    "spec/about.md",
     "posts/expressive-code.md",
     "posts/Fuwari美化.md",
     "posts/markdown-extended.md",
-    "posts/添加字体.md",
     "posts/博客搭建.md",
     "posts/博客使用指南.md",
     "posts/静态部署网站.md",
@@ -302,9 +353,6 @@
     "Untitled 9.md",
     "Untitled 8.md",
     "Untitled 7.md",
-    "Untitled 6.md",
-    "Untitled 5.md",
-    "Untitled 4.md",
     "未命名",
     "posts/cover.jpeg",
     "未命名 1",

@@ -6,8 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["DistantGalaxy", "sans-serif", ...defaultTheme.fontFamily.sans],
-		display: ['DistantGalaxy', ...defaultTheme.fontFamily.sans],
+        sans: ["sans-serif", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
     },
   },
