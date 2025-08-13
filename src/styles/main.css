@@ -1,31 +1,122 @@
 /**
  * =================================================================
- * 最终版 CSS 文件 v10 (整合全屏背景 + 布局调整)
- * @version 10.0
+ * main.css (v18 - 完整注释最终版)
+ * @version 18.0
  *
  * 修改说明:
- * 1. 包含了所有 v9 版本中您满意的、能自适应主题的半透明样式。
- * 2. [已整合] 在文件末尾添加了经过优化的、用于实现静止全屏背景的CSS规则。
- * 3. [已修正] 移除了之前错误的布局代码，并新增了针对主内容区`<main>`和文章头部`.prose`的布局调整，以解决内容遮挡问题。
+ * 1. [注释] 为每一个 CSS 控件和逻辑块添加了详尽的中文注释。
+ * 2. [保留] 所有功能均与上一版 (v17) 保持一致，包含了全局背景、
+ *    半透明组件、完整的动画效果以及所有 Bug 修复。
  * =================================================================
  */
 
+/**
+ * 步骤 1: 引入 Tailwind CSS 的核心部分。
+ * 这是使用 @apply 和其他 Tailwind 功能的基础，必须放在文件顶部。
+ */
+@tailwind base;
 @tailwind components;
+@tailwind utilities;
 
-@font-face {
-  font-family: 'DistantGalaxy';
-  src: url('/fonts/HYWenHei-75W-subseit.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+/**
+ * [基础层]
+ * 定义了整个项目中最低层级的、最基础的样式，主要负责全局布局和背景。
+ */
+@layer base {
+    /**
+     * [关键] 确保上层容器背景透明。
+     * 这是让 #bg 背景图能够“透”出来的核心所在。
+     * 如果没有这个，#swup-container 等容器的默认白色背景会遮挡一切。
+     */
+    #swup-container, .page-wrapper, #content-wrapper {
+        @apply !bg-transparent;
+    }
+
+    /**
+     * 全局背景容器样式。
+     * - fixed: 将其固定定位，使其不随页面滚动。
+     * - top-0 left-0 w-full h-full: 让其铺满整个浏览器视窗。
+     * - object-cover: 确保背景图在不变形的前提下填满整个容器。
+     * - -z-10: 将其层级（z-index）设置为-10，压到所有内容的下面，成为真正的“背景”。
+     */
+    #bg {
+        @apply fixed top-0 left-0 w-full h-full object-cover -z-10;
+    }
 }
 
-@theme {
-  --font-sans: 'DistantGalaxy', 'sans-serif';
-}
-
+/**
+ * [组件层]
+ * 定义了项目中所有可重用的、具有特定样式的 UI 组件。
+ */
 @layer components {
-    /* [已适配] 卡片基础样式 */
+
+    /* --- 超链接样式 (完整版，包含圆角悬停动画) --- */
+    /**
+     * 针对 Markdown 内容区域 (.custom-md) 内的超链接 (a) 进行的特殊样式定义。
+     * :not(.no-styling) 用于排除那些不希望应用此样式的特殊链接。
+     */
+    .custom-md a:not(.no-styling) {
+        /* 基础样式:
+         * - relative: 为伪元素 ::before 的绝对定位提供基准。
+         * - rounded-md: 为链接自身和继承的伪元素提供圆角。
+         * - p-1 -m-1: 通过负外边距和内边距，扩大链接的可点击区域，提升用户体验。
+         * - font-medium: 中等字重。
+         * - text-[var(--primary)]: 链接颜色使用主题变量，实现动态换色。
+         * - underline...: 定义默认状态下的虚线、带偏移的下划线。
+         * - transition: 为链接自身的颜色等属性变化添加平滑过渡。
+         */
+        @apply relative rounded-md p-1 -m-1 
+               font-medium text-[var(--primary)] 
+               underline decoration-[var(--link-underline)] decoration-1 decoration-dashed underline-offset-4 
+               transition;
+        
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+
+        /* 鼠标悬停时，隐藏自身的下划线，因为背景动画会成为主要的视觉反馈。 */
+        &:hover {
+            @apply no-underline;
+        }
+
+        /**
+         * 定义悬停动画的背景板 (::before 伪元素)。
+         * 这是实现圆角背景动画的核心技巧。
+         */
+        &::before {
+            content: '';
+            /* 关键样式:
+             * - absolute inset-0: 绝对定位，并铺满父元素（<a> 标签）的整个区域。
+             * - rounded-[inherit]: 继承父元素的圆角设置。
+             * - -z-10: 将这个背景板置于文字内容的下方。
+             * - transition ease-out: 为背景板的出现（放大、变不透明）添加缓动动画。
+             */
+            @apply absolute inset-0 rounded-[inherit] -z-10 transition ease-out;
+            /* 默认状态: 缩小且完全透明，平时看不到。 */
+            @apply scale-[0.85] opacity-0;
+            /* 背景颜色: 使用主题变量，确保与按钮等组件的悬停背景色一致。 */
+            background: var(--btn-plain-bg-hover);
+        }
+
+        /* 鼠标悬停时，伪元素（背景板）的状态。 */
+        &:hover::before {
+            /* 放大到正常尺寸（100%）并变为完全不透明，从而产生动画效果。 */
+            @apply scale-100 opacity-100;
+        }
+
+        /* 鼠标点击时，伪元素（背景板）的背景色。 */
+        &:active::before {
+            background: var(--btn-plain-bg-active);
+        }
+    }
+
+
+    /* --- 卡片样式 --- */
+    /**
+     * 卡片组件的基础样式，实现了半透明的“玻璃拟物”效果。
+     * - rounded-[var(--radius-large)]: 使用变量定义的大圆角。
+     * - rgba(...): 设置半透明的背景色。
+     * - @supports (backdrop-filter: ...): 浏览器兼容性检查，如果支持毛玻璃效果，则应用。
+     */
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden transition;
         background-color: rgba(255, 255, 255, 0.75);
@@ -36,26 +127,36 @@
     .dark .card-base {
         background-color: rgba(30, 41, 59, 0.75);
     }
-
-    /* [原始部分] */
-    h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
-        @apply transition;
-    }
+    /* 为卡片添加一层非常细微的阴影，增加立体感。 */
     .card-shadow {
         @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)];
     }
+
+    /* --- 基础动画与链接 --- */
+    /* 为页面中几乎所有基础文本元素添加平滑的颜色、位置等过渡效果。 */
+    h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
+        @apply transition;
+    }
+    /* 这是实现链接和按钮悬停背景动画的核心引擎，与 a::before 的逻辑类似。 */
     .expand-animation {
         @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
         before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
     }
+    /* 应用了 .expand-animation 的通用链接组件。 */
     .link {
         @apply transition rounded-md p-1 -m-1 expand-animation;
     }
     .link-lg {
         @apply transition rounded-md p-1.5 -m-1.5 expand-animation;
     }
-
-    /* [已适配] 浮动面板样式 */
+    /* 一个更简单的、只有下划线变化的链接样式。 */
+    .link-underline {
+        @apply transition underline decoration-2 decoration-dashed decoration-[var(--link-underline)]
+        hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem];
+    }
+    
+    /* --- 浮动面板样式 --- */
+    /* 用于顶部导航菜单、搜索面板等浮动元素的“玻璃拟物”样式。 */
     .float-panel {
         @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden transition shadow-xl dark:shadow-none;
         background-color: rgba(255, 255, 255, 0.8);
@@ -66,8 +167,13 @@
     .dark .float-panel {
       background-color: rgba(30, 41, 59, 0.8);
     }
+    /* 浮动面板关闭时的状态：向上位移、透明、不可点击。 */
+    .float-panel-closed {
+        @apply -translate-y-1 opacity-0 pointer-events-none;
+    }
     
-    /* [已适配] 自定义滚动条背景 */
+    /* --- 滚动条与搜索 --- */
+    /* 自定义滚动条的背景，同样应用了“玻璃拟物”效果。 */
     .os-scrollbar-horizontal,
     .os-scrollbar-vertical {
         background-color: rgba(255, 255, 255, 0.75) !important;
@@ -79,16 +185,13 @@
     .dark .os-scrollbar-vertical {
       background-color: rgba(30, 41, 59, 0.75) !important;
     }
-
-    /* [原始部分] */
-    .float-panel-closed {
-        @apply -translate-y-1 opacity-0 pointer-events-none;
-    }
+    /* 搜索结果中高亮文字的样式：背景透明，文字为主题色。 */
     .search-panel mark {
         @apply bg-transparent text-[var(--primary)];
     }
 
-    /* --- 按钮样式 --- */
+    /* --- 按钮样式 (完整版) --- */
+    /* 卡片式按钮，通常用于文章卡片底部的上一页/下一页。 */
     .btn-card {
         @apply transition flex items-center justify-center bg-[var(--card-bg)] hover:bg-[var(--btn-card-bg-hover)]
         active:bg-[var(--btn-card-bg-active)];
@@ -96,6 +199,7 @@
     .btn-card.disabled {
         @apply pointer-events-none text-black/10 dark:text-white/10;
     }
+    /* 朴素按钮，通常是图标按钮，悬停时有背景动画。 */
     .btn-plain {
         @apply transition relative flex items-center justify-center bg-none
         text-black/75 hover:text-[var(--primary)] dark:text-white/75 dark:hover:text-[var(--primary)];
@@ -109,8 +213,7 @@
             }
         }
     }
-
-    /* [已适配] 常规按钮样式 */
+    /* 常规按钮，带半透明背景。 */
     .btn-regular {
         @apply transition flex items-center justify-center active:bg-[var(--btn-regular-bg-active)]
         text-[var(--btn-content)] dark:text-white/75;
@@ -125,46 +228,7 @@
     .dark .btn-regular:hover {
         background-color: rgba(51, 65, 85, 0.8);
     }
-    
-    /* [原始部分] */
-    .link-underline {
-        @apply transition underline decoration-2 decoration-dashed decoration-[var(--link-underline)]
-        hover:decoration-[var(--link-hover)] active:decoration-[var(--link-active)] underline-offset-[0.25rem];
-    }
-    .toc-hide,
-    .toc-not-ready {
-        @apply opacity-0 pointer-events-none;
-    }
-    #toc-inner-wrapper {
-        mask-image: linear-gradient(to bottom, transparent 0%, black 2rem, black calc(100% - 2rem), transparent 100%);
-    }
-    .hide-scrollbar {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .text-90 { @apply text-black/90 dark:text-white/90; }
-    .text-75 { @apply text-black/75 dark:text-white/75; }
-    .text-50 { @apply text-black/50 dark:text-white/50; }
-    .text-30 { @apply text-black/30 dark:text-white/30; }
-    .text-25 { @apply text-black/25 dark:text-white/25; }
-    
-    /* [已适配] 元信息图标样式 */
-    .meta-icon {
-        @apply w-8 h-8 transition rounded-md flex items-center justify-center
-        text-[var(--btn-content)] mr-2;
-        background-color: rgba(226, 232, 240, 0.8);
-    }
-    .dark .meta-icon {
-        background-color: rgba(71, 85, 105, 0.7);
-    }
-    
-    .with-divider {
-        @apply before:content-['/'] before:ml-1.5 before:mr-1.5 before:text-[var(--meta-divider)] before:text-sm
-        before:font-medium before:first-of-type:hidden before:transition;
-    }
+    /* 深色常规按钮，用于代码块复制等场景。 */
     .btn-regular-dark {
         @apply flex items-center justify-center
         bg-[oklch(0.45_0.01_var(--hue))] hover:bg-[oklch(0.50_0.01_var(--hue))] active:bg-[oklch(0.55_0.01_var(--hue))]
@@ -173,101 +237,63 @@
     .btn-regular-dark.success {
         @apply bg-[oklch(0.75_0.14_var(--hue))] dark:bg-[oklch(0.75_0.14_var(--hue))];
     }
+    
+    /* --- 功能性样式 (完整版) --- */
+    /* 目录（Table of Contents）的隐藏与未准备就绪状态。 */
+    .toc-hide,
+    .toc-not-ready {
+        @apply opacity-0 pointer-events-none;
+    }
+    /* 为目录添加上下渐变遮罩，以优化长目录的滚动视觉效果。 */
+    #toc-inner-wrapper {
+        mask-image: linear-gradient(to bottom, transparent 0%, black 2rem, black calc(100% - 2rem), transparent 100%);
+    }
+    /* 隐藏滚动条的工具类。 */
+    .hide-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* 不同透明度的文字颜色工具类。 */
+    .text-90 { @apply text-black/90 dark:text-white/90; }
+    .text-75 { @apply text-black/75 dark:text-white/75; }
+    .text-50 { @apply text-black/50 dark:text-white/50; }
+    .text-30 { @apply text-black/30 dark:text-white/30; }
+    .text-25 { @apply text-black/25 dark:text-white/25; }
+    
+    /* 文章元信息（如日期、分类）的图标样式。 */
+    .meta-icon {
+        @apply w-8 h-8 transition rounded-md flex items-center justify-center
+        text-[var(--btn-content)] mr-2;
+        background-color: rgba(226, 232, 240, 0.8);
+    }
+    .dark .meta-icon {
+        background-color: rgba(71, 85, 105, 0.7);
+    }
+    /* 为元信息添加 “/” 分隔符。 */
+    .with-divider {
+        @apply before:content-['/'] before:ml-1.5 before:mr-1.5 before:text-[var(--meta-divider)] before:text-sm
+        before:font-medium before:first-of-type:hidden before:transition;
+    }
 }
 
-/* --- 全局样式 --- */
+/**
+ * [全局微调]
+ * 针对特定元素的补充样式或布局调整。
+ */
+/* 为文章内的图片添加可点击放大的鼠标指针。 */
 .custom-md img {
     @apply cursor-zoom-in;
 }
 
-/* [已适配] 行内代码 `<code>` 标签 */
-.custom-md code {
-    @apply text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
-    background-color: rgba(241, 245, 249, 0.8);
-    font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-    &:before { content:none; }
-    &:after { content:none; }
-    counter-reset: line;
-    span.line {
-        &:before {
-            @apply text-white/25 mr-4 w-4 inline-block;
-            content: counter(line);
-            counter-increment: line;
-            direction: rtl;
-        }
-        &:last-child:empty, &:last-child:has(> span:empty:only-child) { display: none; }
-    }
-}
-.dark .custom-md code {
-  background-color: rgba(51, 65, 85, 0.7);
-}
-
-::selection {
-    background-color: var(--selection-bg);
-}
-.dash-line {
-    position: relative;
-}
-.dash-line::before {
-    content: "";
-    position: absolute;
-    width: 10%;
-    height: 100%;
-    left: calc(50% - 1px);
-    border-left: 2px dashed var(--line-color);
-    pointer-events: none;
-    transition: all 0.3s;
-    transform: translateY(-50%);
-}
-.collapsed {
-    height: var(--collapsedHeight);
-}
-
-/**
- * =================================================================
- * [新增部分] 全屏封面图及布局调整
- * =================================================================
- */
-
-/* 步骤 1: 设置封面图容器全屏并置于底层 */
-#post-cover {
-    /* 使用 'fixed' 定位让背景静止不动，不随页面滚动。*/
-    /* 'w-screen' 和 'h-screen' 使其铺满整个视口。*/
-    /* '-z-10' 将其置于所有其他内容之下，成为真正的背景。*/
-    @apply fixed top-0 left-0 w-screen h-screen -z-10;
-}
-
-/* 步骤 2: 让封面图本身填满其容器 */
-#post-cover img {
-    /* 'w-full' 和 'h-full' 让图片占满 #post-cover 容器。*/
-    /* 'object-cover' 是关键，它能保持图片比例，通过裁剪来填充空间，防止变形。*/
-    /* 'cursor-default' 移除不必要的鼠标指针样式。*/
-    @apply w-full h-full object-cover cursor-default;
-}
-
-/*
- * 步骤 3: 调整主内容区的布局
- * 这是为了给顶部的导航栏和全屏背景下的标题区留出空间。
- */
+/* 为文章正文区域保留上边距，避免与页面标题区域重叠。 */
 main.prose {
-    /* 
-     * 'pt-16' 或 'pt-20' 为文章主体内容（从第一个H2标题或段落开始）添加一个上边距。
-     * 这可以确保文章正文与顶部的标题、元信息之间有呼吸感。
-     * 您可以调整这个值以获得最佳的视觉效果。
-     */
     @apply pt-16;
 }
 
-/* 
- * 步骤 4: 调整文章头部的布局
- * 我们需要为整个页面（从文章大标题开始）添加一个非常大的上边距，
- * 以便把它从被导航栏遮挡的区域“推”下来。
- */
+/* 为文章标题区域保留上边距，确保页面标题不会被顶部的导航栏遮挡。 */
 .page-wrapper > header {
-    /* 
-     * 'pt-32' 或 'pt-40' 是一个比较大的上边距。
-     * 这个值需要足够大，以确保文章标题能显示在导航栏下方一个舒适的位置。
-     * 这是您最需要根据自己网站导航栏高度进行微调的值。
-     */
     @apply pt-32;
 }

@@ -7,7 +7,7 @@ tags:
   - 思考
   - 反代
   - Cloudflare
-category: 前端
+category: 教程
 draft: false
 ---
 ## 前言

@@ -55,12 +55,33 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home, // 指向首页的链接
 		LinkPreset.Archive, // 指向归档页面的链接
-		LinkPreset.About, // 指向关于页面的链接
+		LinkPreset.About, // 指向关于页面的链接 修改名称在语言包src\i18n\languages\zh_CN.ts 
 		{
 			name: "GitHub", // 链接名称
 			url: "https://github.com/lqt444444/lqt444444.GitHub.io", // 目标 URL 地址
 			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
 		},
+		{
+			name: "Vercel", // 链接名称
+			url: "https://vercel.342191.xyz", // 目标 URL 地址
+			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
+		},
+		{
+			name: "Netlify", // 链接名称
+			url: "https://netlify.342191.xyz", // 目标 URL 地址
+			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
+		},
+		{
+			name: "Alist", // 链接名称
+			url: "https://Alist1.342191.xyz", // 目标 URL 地址
+			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
+			},
+		{
+			name: "Pan", // 链接名称
+			url: "https://yant.342191.xyz", // 目标 URL 地址
+			external: true, // 设置为 true, 会显示一个外部链接图标, 并在新标签页中打开
+		},
+	
 	],
 };
 
