@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/ReformBottom.md",
+                "file": "posts/moonlight-colors-theme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,11 +100,59 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ReformBottom"
+              "title": "moonlight-colors-theme"
+            }
+          },
+          {
+            "id": "fff580b8908ea52d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/FileScnner.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "FileScnner"
+            }
+          },
+          {
+            "id": "808ba1b513c4dbbd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/DialogBuilderMarkdown.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "DialogBuilderMarkdown"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -177,7 +225,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/ReformBottom.md",
+                "file": "posts/DialogBuilderMarkdown.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -187,7 +235,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "ReformBottom 的反向链接列表"
+              "title": "DialogBuilderMarkdown 的反向链接列表"
             }
           },
           {
@@ -238,7 +286,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 638.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -252,16 +300,22 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "90f6cedd8960f4c4",
+  "active": "808ba1b513c4dbbd",
   "lastOpenFiles": [
-    "NetworkUtils.java",
+    "posts/FileScnner.md",
+    "posts/DialogBuilderMarkdown.md",
+    "PeriodicFileScanner.java",
+    "ScannerManager 1.java",
+    "ScannerManager.java",
     "posts/MoonLight.md",
-    "posts/添加字体.md",
-    "posts/静态部署网站.md",
+    "posts/startInitialization.md",
+    "posts/moonlight-colors-theme.md",
+    "2025-07-09.md",
     "posts/如何使用CF搭建节点.md",
     "posts/ReformBottom.md",
-    "posts/moonlight-colors-theme.md",
-    "posts/startInitialization.md",
+    "NetworkUtils.java",
+    "posts/添加字体.md",
+    "posts/静态部署网站.md",
     "posts/markdown-extended.md",
     "posts/Cloudflare-Worker-ProxyLink.md",
     "posts/加速访问部分网站.md",
@@ -278,8 +332,6 @@
     "模板/t.md",
     "模板/kbd-templatr.md",
     "Untitled 3.md",
-    "Untitled 1.md",
-    "Untitled.md",
     "未命名",
     "posts/cover.jpeg",
     "未命名 1",

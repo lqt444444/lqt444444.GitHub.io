@@ -1,11 +1,11 @@
 ---
 title: startInitialization初始化逻辑
-published: 2025-07-09
+published: 2025-08-23
 description: startInitialization
 tags:
   - 技术
   - 思考
-category: moonlight
+category: MoonLight
 draft: true
 ---
 startInitialization函数
