@@ -5,6 +5,7 @@ description: 如何给应用内置杀en
 tags:
   - 技术
   - 思考
+  - 教程
 category: MoonLight
 draft: false
 ---
@@ -19,3 +20,6 @@ draft: false
 p0在Java当中就有this的意思，这保证了参数类型的正确性
 :::
 6. 大功告成，dialog注入同理
+
+调用杀EN相关代码
+ 之后补充

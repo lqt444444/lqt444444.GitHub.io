@@ -32,7 +32,9 @@
     "模板/tips-templatr.md",
     "模板/kbd-templatr.md",
     "模板/ds.md",
-    "模板/t.md"
+    "模板/t.md",
+    "模板/a.md",
+    ""
   ],
   "startup_templates": [
     "模板/ds.md"

@@ -114,5 +114,13 @@
       ],
       "key": "Numpad0"
     }
+  ],
+  "templater-obsidian:模板/a.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Y"
+    }
   ]
 }

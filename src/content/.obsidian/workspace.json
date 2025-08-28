@@ -174,9 +174,177 @@
               "icon": "lucide-file",
               "title": "如何给应用内置杀en"
             }
+          },
+          {
+            "id": "fe4b6dae3ffb4070",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/逆向工具汇总.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "逆向工具汇总"
+            }
+          },
+          {
+            "id": "bd05297435877bee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/加载网络配置弹窗.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "加载网络配置弹窗"
+            }
+          },
+          {
+            "id": "ecb2fd16c6fa485d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "模板/ds.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "ds"
+            }
+          },
+          {
+            "id": "27025352eb3f219d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/加载网络配置弹窗.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "加载网络配置弹窗"
+            }
+          },
+          {
+            "id": "894e9598330259e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/补充网络配置加载.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "补充网络配置加载"
+            }
+          },
+          {
+            "id": "44377c976874c0e4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/记录.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "记录"
+            }
+          },
+          {
+            "id": "52caee79d15fa80a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/链式代理补充.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "链式代理补充"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -249,7 +417,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/如何给应用内置杀en.md",
+                "file": "posts/链式代理补充.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -259,7 +427,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "如何给应用内置杀en 的反向链接列表"
+              "title": "链式代理补充 的反向链接列表"
             }
           },
           {
@@ -324,38 +492,39 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ffb14821b78aa5ed",
+  "active": "52caee79d15fa80a",
   "lastOpenFiles": [
-    "AndroidManifest.xml",
-    "posts/FileScnner.md",
+    "posts/记录.md",
+    "posts/链式代理补充.md",
+    "posts/补充网络配置加载.md",
     "posts/如何给应用内置杀en.md",
+    "posts/加载网络配置弹窗.md",
+    "posts/FileScnner.md",
     "posts/DialogBuilderMarkdown.md",
+    "posts/MoonLight.md",
+    "posts/ReformBottom.md",
+    "().md",
+    "2025-07-09.md",
+    "posts/guide/index.md",
+    "模板/a.md",
+    "模板/ds.md",
+    "模板/kbd-templatr.md",
+    "模板/tips-templatr.md",
+    "模板/t.md",
+    "posts/先.md",
+    "posts/markdown-extended.md",
+    "posts/Cloudflare-Worker-ProxyLink.md",
+    "posts/静态部署网站.md",
+    "posts/博客搭建.md",
+    "posts/Fuwari美化.md",
+    "posts/添加字体.md",
+    "posts/加速访问部分网站.md",
+    "posts/如何使用CF搭建节点.md",
+    "AndroidManifest.xml",
     "PeriodicFileScanner.java",
     "ScannerManager 1.java",
     "ScannerManager.java",
-    "posts/MoonLight.md",
-    "posts/startInitialization.md",
-    "posts/moonlight-colors-theme.md",
-    "2025-07-09.md",
-    "posts/如何使用CF搭建节点.md",
-    "posts/ReformBottom.md",
     "NetworkUtils.java",
-    "posts/添加字体.md",
-    "posts/静态部署网站.md",
-    "posts/markdown-extended.md",
-    "posts/Cloudflare-Worker-ProxyLink.md",
-    "posts/加速访问部分网站.md",
-    "模板/tips-templatr.md",
-    "posts/markdown.md",
-    "posts/博客使用指南.md",
-    "posts/博客搭建.md",
-    "posts/Fuwari美化.md",
-    "spec/about.md",
-    "posts/expressive-code.md",
-    "posts/draft.md",
-    "posts/video.md",
-    "posts/博客搭建 1.md",
-    "模板/t.md",
     "未命名",
     "posts/cover.jpeg",
     "未命名 1",

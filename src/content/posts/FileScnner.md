@@ -5,6 +5,7 @@ description: 对于AndroidAPP私有目录定期并扫描的封装
 tags:
   - 技术
   - 思考
+  - 教程
 category: MoonLight
 draft: false
 ---
