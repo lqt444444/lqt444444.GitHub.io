@@ -9,6 +9,7 @@ tags:
   - Cloudflare
 category: MoonLight
 draft: false
+pinned: true
 ---
 ### 原理
 1. 传统当中`客户端-服务器-数据库`的卡密验证架构，对于服务器，数据库存在一定需求，很容易成为攻击目标，为了弥补搭建网络卡密验证方面的缺点，写了本文章

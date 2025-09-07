@@ -21,13 +21,13 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
+	title: "LiQiuTing",
+	subtitle: "One BLOG",
 
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 210, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 21, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: true, // 对访问者隐藏主题色选择器
 	},
 	translate: {
@@ -171,12 +171,7 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "mdi:git",
 				},
-				{
-					name: "Netlify",
-					url: "https://netlify.342191.xyz",
-					external: true,
-					icon: "mdi:git",
-				},
+				//{name: "Netlify",url: "https://netlify.342191.xyz",external: true,icon: "mdi:git",},
 			],
 		},
 		{
@@ -196,21 +191,21 @@ export const navBarConfig: NavBarConfig = {
 			url: "#",
 			icon: "material-symbols:more-horiz",
 			children: [
-				{
-					name: "项目展示",
-					url: "/projects/",
-					icon: "material-symbols:work",
-				},
-				{
-					name: "技能展示",
-					url: "/skills/",
-					icon: "material-symbols:psychology",
-				},
-				{
+				// {
+					// name: "项目展示",
+					// url: "/projects/",
+					// icon: "material-symbols:work",
+				// },
+				// {
+					// name: "技能展示",
+					// url: "/skills/",
+					// icon: "material-symbols:psychology",
+				// },
+				/* {
 					name: "时间线",
 					url: "/timeline/",
 					icon: "material-symbols:timeline",
-				},
+				}, */
 			],
 		},
 	],
@@ -218,10 +213,10 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Mizuki",
-	bio: "这是一个描述",
+	name: "LiQiuTing",
+	bio: "纯小白 仅仅记录一些内容 用来防止忘记",
 	links: [
-		{
+		/* {
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/701864046",
@@ -235,6 +230,25 @@ export const profileConfig: ProfileConfig = {
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/matsuzaka-yuki",
+		}, */
+		{
+			name: "Twitter", // 链接名称
+			icon: "fa6-brands:twitter", // 图标代码, 可在 https://icones.js.org/ 网站查找
+			// 注意: 如果你使用的图标集未被项目默认包含, 你需要手动安装它
+			// 例如: `pnpm add @iconify-json/<图标集名称>`
+			url: "https://x.com/SakuraLiQiuting?s=09",
+		},
+		{
+			name: "telegram", // 链接名称
+			icon: "tabler:brand-telegram", // 图标代码, 可在 https://icones.js.org/ 网站查找
+			// 注意: 如果你使用的图标集未被项目默认包含, 你需要手动安装它
+			// 例如: `pnpm add @iconify-json/<图标集名称>`
+			url: "https://t.me/LiQiuTing",
+		},
+		{
+			name: "GitHub",
+			icon: "fa6-brands:github",
+			url: "https://github.com/lqt444444/lqt444444.GitHub.io",
 		},
 	],
 	// Umami统计部份，记得在layout插入Umami的head标签
@@ -266,7 +280,7 @@ export const commentConfig: CommentConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "公告", // 公告标题
-	content: "欢迎来到我的博客！这是一个示例公告。", // 公告内容
+	content: "欢迎来到我的博客！", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
@@ -277,7 +291,7 @@ export const announcementConfig: AnnouncementConfig = {
 };
 
 export const musicPlayerConfig: MusicPlayerConfig = {
-	enable: true, // 启用音乐播放器功能
+	enable: false, // 启用音乐播放器功能
 };
 
 export const footerConfig: FooterConfig = {

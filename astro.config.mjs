@@ -27,7 +27,7 @@ import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
-	site: "https://mizuki.mysqil.com/",
+	site: "https://342191.xyz/",
 
 	base: "/",
 	trailingSlash: "always",
@@ -43,7 +43,7 @@ export default defineConfig({
 			containers: ["main"],
 			smoothScrolling: false, // 禁用平滑滚动以提升性能，避免与锚点导航冲突
 			cache: true,
-			preload: false, // 禁用预加载以减少网络请求
+			preload: true, // 禁用预加载以减少网络请求
 			accessibility: true,
 			updateHead: true,
 			updateBodyClass: false,
