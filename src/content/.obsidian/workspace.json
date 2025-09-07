@@ -1,0 +1,319 @@
+{
+  "main": {
+    "id": "e048b0b1c9951172",
+    "type": "split",
+    "children": [
+      {
+        "id": "af216bf82bbe18e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0cd2f582915166fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/Wiki search and Wikilinks.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Wiki search and Wikilinks"
+            }
+          },
+          {
+            "id": "32c627f96553bd1c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/Wiki search and Wikilinks.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Wiki search and Wikilinks"
+            }
+          },
+          {
+            "id": "9891c9c3a6804a00",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/Using markdown wiki-links in Astro framework.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Using markdown wiki-links in Astro framework"
+            }
+          },
+          {
+            "id": "5afb84536eaaadfa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/wiki-links-post-in-stackoverflow.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "wiki-links-post-in-stackoverflow"
+            }
+          },
+          {
+            "id": "327be1f5a07d9e74",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/make Fuwari great again.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "make Fuwari great again"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a7dfb02764e3e46e",
+    "type": "split",
+    "children": [
+      {
+        "id": "494ca994ca8d01cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9ece72660928dba",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "87e59844a93bfb1b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "06b510cfe1e73917",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d1be97a75b8f9589",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbc86c4a2904129d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8591d42071399294",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "posts/make Fuwari great again.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "make Fuwari great again 的反向链接列表"
+            }
+          },
+          {
+            "id": "9c51f3df58abaa25",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "posts/Fuwari美化.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Fuwari美化 的出链列表"
+            }
+          },
+          {
+            "id": "20e7f21eac256a7b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "58bfd1e640a5da4d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "posts/make Fuwari great again.md",
+                "followCursor": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "make Fuwari great again 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "templater-obsidian:Templater": false,
+      "wikipedia-search:Open Article": false
+    }
+  },
+  "active": "327be1f5a07d9e74",
+  "lastOpenFiles": [
+    "posts/wiki-links-test.md",
+    "posts/make Fuwari great again.md",
+    "[build fuwari in astro.md",
+    "posts/chain-proxy-tutorial-supplement.md",
+    "posts/wiki-links-post-in-stackoverflow.md",
+    "posts/build fuwari in astro.md",
+    "posts/Add Font in Fuwari.md",
+    "posts/proxy by chain.md",
+    "posts/Cloudflare-Worker-ProxyLink.md",
+    "posts/Load-the-network configuration-pop-up window.md",
+    "posts/Using markdown wiki-links in Astro framework.md",
+    "posts/Card-password-verification system-without-network-storage2.md",
+    "posts/Card-password-verification system-without-network-storage.md",
+    "posts/Wiki search and Wikilinks.md",
+    "posts/Trojan-Donut.e-in-Huorong.md",
+    "posts/FUCK.md",
+    "posts/Supplementary network configuration loading.md",
+    "posts/FileScnner.md",
+    "posts/Engineering Tools Summary.md",
+    "posts/video.md",
+    "posts/markdown-extended.md",
+    "posts/Blog Fuck Guide！.md",
+    "posts/build Static website in Diverse Hosting Platform？.md",
+    "posts/How to use CloudFllare to proxy device.md",
+    "posts/MoonLight-colors-theme.md",
+    "posts/How to give the application kill-en？.md",
+    "AndroidManifest.xml",
+    "PeriodicFileScanner.java",
+    "ScannerManager 1.java",
+    "ScannerManager.java",
+    "NetworkUtils.java",
+    "未命名",
+    "posts/cover.jpeg",
+    "未命名 1",
+    "模板"
+  ]
+}
